@@ -94,6 +94,38 @@ Edit the example raw input in `src/predict.py` to try a different employee profi
 - Unknown categories at inference time are ignored by the encoder rather than causing prediction to fail.
 - Regression metrics are calculated on a held-out test set.
 
+## Model Comparison
+
+Four regression models were evaluated to compare their performance on the employee salary prediction task. Models were compared using Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), and the coefficient of determination (R²).
+
+### Test Set Results
+
+| Model | MAE ↓ | RMSE ↓ | R² ↑ |
+|---|---:|---:|---:|
+| Extra Trees Regressor | 11,759.50 | 16,942.39 | 0.8481 |
+| Random Forest Regressor | 11,612.08 | 16,873.61 | 0.8493 |
+| Linear Regression | 12,066.48 | 15,585.17 | 0.8715 |
+| Dummy Regressor (Baseline) | 36,000.00 | 43,474.13 | -0.0001 |
+
+*Lower MAE and RMSE indicate smaller prediction errors; higher R² indicates a better fit to the test data.*
+
+### Evaluation Setup
+
+- Dataset after duplicate removal and handling missing target values: 324 rows.
+- Train/test split: 80% training and 20% testing.
+- Random state: 42.
+- Model selection: 5-fold cross-validation using MAE on the training data.
+- Final evaluation: MAE, RMSE, and R² on the held-out test set.
+
+### Results Interpretation
+
+- **Random Forest** achieved the lowest test MAE among the three trained regression models.
+- **Linear Regression** achieved the lowest test RMSE and highest test R² in this experiment.
+- **Extra Trees** was selected using cross-validation MAE on the training set; it did not achieve the best score on every test metric.
+- The Dummy Regressor provides a baseline to assess whether the trained models improve on a simple prediction strategy.
+
+These results are specific to the current dataset and train/test split. They should not be interpreted as a guarantee of performance on unseen real-world salary data.
+
 ## Limitations
 
 - Performance depends on the dataset's representativeness, quality, and provenance.
