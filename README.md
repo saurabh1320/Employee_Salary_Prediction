@@ -1,4 +1,8 @@
 # Employee Salary Prediction
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white)
+![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Regression-orange)
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-Model%20Training-F7931E?logo=scikitlearn&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Completed-success)
 
 A reproducible machine-learning project that explores employee attributes and trains a regression model to estimate salary.
 
