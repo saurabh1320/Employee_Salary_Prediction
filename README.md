@@ -130,6 +130,19 @@ Four regression models were evaluated to compare their performance on the employ
 
 These results are specific to the current dataset and train/test split. They should not be interpreted as a guarantee of performance on unseen real-world salary data.
 
+
+## Visualizations
+
+### Salary vs. Years of Experience
+
+![Salary vs. Experience](reports/salary_vs_experience.png)
+
+### Model Residual Analysis
+
+The residual plot shows the difference between actual and predicted salaries on the held-out test set. Residuals closer to zero indicate smaller prediction errors.
+
+![Extra Trees Residual Plot](reports/residual_plot_extra_trees.png)
+
 ## Limitations
 
 - Performance depends on the dataset's representativeness, quality, and provenance.
